@@ -1,12 +1,17 @@
 import Nav from "./components/Nav";
+import Landing from "./components/Landing"
+import Highlights from "./components/Highlights";
+import Featured from "./components/Featured";
+
 
 
 function App() {
   return (
     <div className="App">
-      <Nav
-
-      />
+      <Nav />
+      <Landing />
+      <Highlights/>
+      <Featured/>
     </div>
   );
 }
