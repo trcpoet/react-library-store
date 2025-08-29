@@ -3,8 +3,10 @@ import React from "react";
 
 const Book = ({ book }) => {
   return (
-    <div className="book">
 
+    
+
+    <div className="book">
       <a href="/">
         <figure className="book__img--wrapper">
           <img src={book.url} alt={book.title} className="book__img" />
@@ -18,12 +20,15 @@ const Book = ({ book }) => {
       </div>
 
       <div className="book__ratings">
-
         {
-            new Array(5).fill(0).map((_, index) => <FontAwesomeIcon icon="star" key={index}/>)
+            new Array(Math.floor(book.rating)).fill(0).map((_, index) => <FontAwesomeIcon icon="star" key={index}/>)
         }
-
+        {/* If it's not an integer, I want you to print the half star icon*/}
+        {
+            !Number.isInteger(book.rating) && <FontAwesomeIcon icon="star-half-alt" />
+        }
       </div>
+
       <div className="book__price">
         {book.salePrice ? (
           <>

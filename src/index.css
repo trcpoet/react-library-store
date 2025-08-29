@@ -447,6 +447,24 @@ FEATURES
   color: #bfbfbf;
 }
 
+
+/* 
+
+DISCOUNTED BOOKS
+
+ */
+
+ .section__title {
+  text-align: center;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+
+
+
 /* 
 
 EXPLORE
