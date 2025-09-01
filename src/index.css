@@ -370,6 +370,8 @@ FEATURES
   display: flex;
   flex-wrap: wrap;
   margin: 0 -24px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .book {

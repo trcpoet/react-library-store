@@ -7,6 +7,8 @@ export const books = [
     originalPrice: 49.95,
     salePrice: 14.95,
     rating: 4.5,
+    description: "A comprehensive guide to technical interviews with 189 programming questions and detailed solutions."
+
   },
   {
     id: 2,
@@ -15,6 +17,8 @@ export const books = [
     originalPrice: 39,
     salePrice: null,
     rating: 5,
+        description: "James Clear's best-selling book on how small habits compound into remarkable results."
+
   },
   {
     id: 3,
@@ -23,6 +27,8 @@ export const books = [
     originalPrice: 29,
     salePrice: null,
     rating: 5,
+        description: "David Goggins shares his story of overcoming adversity and developing mental toughness."
+
   },
   {
     id: 4,
@@ -31,6 +37,8 @@ export const books = [
     originalPrice: 44,
     salePrice: 19,
     rating: 4.5,
+        description: "Cal Newport shows how to focus without distraction on cognitively demanding tasks, unlocking productivity and mastery in a distracted world."
+
   },
   {
     id: 5,
@@ -39,6 +47,8 @@ export const books = [
     originalPrice: 32,
     salePrice: null,
     rating: 5,
+        description: "Grant Cardone argues that massive success requires massive action, encouraging readers to set goals 10 times bigger than they think possible."
+
   },
   {
     id: 6,
@@ -47,6 +57,8 @@ export const books = [
     originalPrice: 70,
     salePrice: 12.5,
     rating: 5,
+        description: "Grant Cardone teaches sales techniques and persuasion strategies, showing how selling is essential in both business and everyday life."
+
   },
   {
     id: 7,
@@ -55,6 +67,8 @@ export const books = [
     originalPrice: 11,
     salePrice: 10,
     rating: 4,
+        description: "Robert Kiyosaki contrasts his 'rich dad' and 'poor dad' to explain how financial education and investing can lead to wealth and independence."
+
   },
   {
     id: 8,
@@ -63,6 +77,8 @@ export const books = [
     originalPrice: 38,
     salePrice: 17.95,
     rating: 4.5,
+        description: "Robert Kiyosaki explains the four types of earners—Employee, Self-Employed, Business Owner, and Investor—and how to transition toward financial freedom."
+
   },
   {
     id: 9,
@@ -71,6 +87,8 @@ export const books = [
     originalPrice: 35,
     salePrice: 19.95,
     rating: 4.5,
+        description: "A summary of Robert Greene’s bestseller that reveals timeless strategies for gaining, defending, and wielding power in personal and professional life."
+
   },
   {
     id: 10,
@@ -79,6 +97,8 @@ export const books = [
     originalPrice: 40,
     salePrice: null,
     rating: 5,
+        description: "Mel Robbins introduces a simple psychological tool—counting down from five—to help you overcome hesitation, take action, and build confidence."
+
   },
   {
     id: 11,
@@ -87,6 +107,8 @@ export const books = [
     originalPrice: 30,
     salePrice: 20,
     rating: 5,
+        description: "Dale Carnegie’s timeless classic on communication and influence, teaching techniques to build relationships, win people over, and become a better leader."
+
   },
   {
     id: 12,
@@ -95,5 +117,7 @@ export const books = [
     originalPrice: 30,
     salePrice: 12.95,
     rating: 4.5,
+        description: "Robert Greene explores the path to true mastery by learning from history’s greatest masters and emphasizes patience, practice, and lifelong learning."
+
   },
 ];

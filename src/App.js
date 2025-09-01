@@ -1,37 +1,36 @@
 import Nav from "./components/Nav";
-import Landing from "./components/Landing"
-import Highlights from "./components/Highlights";
-import Featured from "./components/Featured";
-import Discounted from "./components/Discounted";
-import Explore from "./components/Explore";
 import Footer from "./components/Footer";
-import Book from "./components/ui/Book";
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// import Book from "./components/ui/Book";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { books } from "./data";
-
+import Home from "./pages/Home";
+import Books from "./pages/Books";  // 👈 new list component
+import BookInfo from "./pages/BookInfo";
+import Cart from "./pages/Cart";
 
 
 function App() {
   return (
-<Router>
+    <Router>
       <div className="App">
         <Nav />
         <Routes>
           {/* Home Page */}
-          <Route
-            path="/"
-            element={
+          <Route path="/" exact element={
               <>
-                <Landing />
-                <Highlights />
-                <Featured />
-                <Discounted />
-                <Explore />
+                <Home />
               </>
             }
           />
+
           {/* Books Page */}
-          <Route path="/books" element={<Book books={books} />} />
+          <Route path="/books" element={<Books books={books} />} />
+            {/* Book Page */}
+          <Route path ="/books/:id" element ={<BookInfo books = {books}/>}/>
+            {/* Cart Page */}
+          <Route path ="/cart" element ={<Cart books = {books}/>}/>
+
+            
         </Routes>
         <Footer />
       </div>
@@ -40,3 +39,6 @@ function App() {
 }
 
 export default App;
+
+
+<Route path= "/" exact component = {Home} />
