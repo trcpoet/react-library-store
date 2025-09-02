@@ -63,11 +63,9 @@ export default function Cart() {
                             Proceed to Checkout
                         </button>
                     </div>
-
                 </div>
             </div>
         </main>
-
     </div>
   )
 }
