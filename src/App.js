@@ -14,7 +14,32 @@ function App() {
   const [cart, setCart] = useState([]);
 
   function addToCart(book) {
-    setCart([...cart, book])
+    setCart([...cart, {...book, quantity : 1}])
+  }
+
+  function changeQuantity(book, quantity) {
+    setCart(
+      cart.map((item) => item.id === book.id  
+        ? {
+          ...item, quantity: +quantity,
+        }
+        :  item
+      )
+    );
+  }
+
+  function removeItem(item) {
+    setCart(cart.filter((book) => book.id !== item.id))
+    // Keep it in the Array if IDs don't match. And if they do match, remove it from the array
+    console.log('removeItem', item)
+  }
+
+  function numberOfItems() {
+    let counter = 0;
+    cart.forEach(item => {
+      counter += item.quantity
+    })
+    return counter
   }
   
     useEffect(() => {
@@ -24,7 +49,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav numberOfItems={numberOfItems()} />
         <Routes>
           {/* Home Page */}
           <Route path="/" exact element={<><Home /></>}/>
@@ -33,10 +58,22 @@ function App() {
           <Route path="/books" element={<Books books={books} />} />
 
             {/* Book Page */}
-          <Route path ="/books/:id" element ={<BookInfo books = {books} addToCart={addToCart} cart={cart}/>}/>
+          <Route 
+            path ="/books/:id" 
+            element = {<BookInfo books = {books} addToCart={addToCart} cart={cart}/>}/>
 
             {/* Cart Page */}
-          <Route path ="/cart" element ={<Cart books = {books}/>}/>
+          <Route path ="/cart" 
+          element ={
+            <Cart 
+              books = {books} 
+              cart = {cart} 
+              changeQuantity={changeQuantity} 
+              removeItem = {removeItem} 
+          />
+        }
+
+          />
             
         </Routes>
         <Footer />
@@ -45,38 +82,3 @@ function App() {
   );
 }
 export default App;
-
-<Route path= "/" exact component = {Home} />
-
-
-
-
-
-
-
-
-  //   const dupeItem = cart.find(item => +item.id === +book.id)
-
-  //   if (dupeItem){
-  //     // Update quantity
-  //     setCart(cart.map(item => {
-  //       if (item.id === dupeItem.id) {
-  //         return {
-  //           ...item, 
-  //           quantity: item.quantity +1,
-  //         }
-  //       }
-  //       else {
-  //         return item
-  //       }
-  //     }))
-  //   }
-  //   else{
-  //     setCart([...cart, {...book, quantity:1}])
-  //   }
-    // setCart([...cart, {...book, quantity : 1}])
-  // }
-
-//   useEffect(() => {
-//     console.log("Cart State:", cart);
-//  }, [cart])

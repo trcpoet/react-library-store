@@ -398,6 +398,12 @@ FEATURES
   margin-bottom: 8px;
 }
 
+.book__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;          /* spacing between skeleton bars */
+}
+
 .skeleton {
   background-color: rgb(227, 227, 227) !important;
   margin-bottom: 8px;
@@ -406,16 +412,22 @@ FEATURES
 .book__title--skeleton {
   height: 21px;
   width: 100%;
+  max-width: 250px;
+  background-color: rgb(227, 227, 227);
+
 }
 
 .book__rating--skeleton {
   width: 100px;
   height: 19px;
+  background-color: rgb(227, 227, 227);
 }
 
 .book__price--skeleton {
   width : 200px;
   height: 19px;
+  background-color: rgb(227, 227, 227);
+
 }
 
 .book__link {
