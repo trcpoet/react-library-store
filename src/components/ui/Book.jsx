@@ -5,55 +5,55 @@ import Rating from "./Rating";
 import Price from "./Price";
 
 const Book = ({ book }) => {
-  console.log("Book URL:", book.url);   // ✅ log inside component
-
-
   const [img, setImg] = useState();
-
   const mountedRef = useRef(true);
 
   useEffect(() => {
     const image = new Image();
-    image.src=book.url;
+    image.src = book.url;
+
     image.onload = () => {
       setTimeout(()=> {
         if (mountedRef.current) {
-          setImg(image);
+          setImg(image.src);
         }
-      }, 3);
+      }, 300);
     };
+      image.onerror = () => {
+    if (mountedRef.current) {
+      setImg("/fallback.jpg");
+    }
+  };
     return () => {
       // When the component unmounts
       mountedRef.current = false;
     };
-  });
+  }, [book.url]);
 
   return (
     <div className="book">
       {img ? (
         <>
-            
-      <Link to={`/books/${book.id}`}>
-      <figure className="book__img--wrapper">
-        <img 
-        src={img.src} 
-        alt={book.title} 
-        className="book__img" 
-        />
-      </figure>
-      </Link>
+          <Link to={`/books/${book.id}`}>
+            <figure className="book__img--wrapper">
+              <img 
+              src={img} 
+              alt={book.title} 
+              className="book__img" 
+              />
+            </figure>
+          </Link>
 
-    <div className="book__title">
-      <Link to={`/books/${book.id}`} className="book__title--link">
-        {book.title}
-      </Link>
-    </div>
+          <div className="book__title">
+            <Link to={`/books/${book.id}`} className="book__title--link">
+              {book.title}
+            </Link>
+          </div>
 
-    <Rating rating={book.rating} />
-
-    <Price salePrice={book.salePrice} originalPrice={book.originalPrice} />
-    </>)
-    : (
+          <Rating rating={book.rating} />
+          <Price salePrice={book.salePrice} originalPrice={book.originalPrice} />
+      </>
+    ) : (
     <>
           <div className="book__img--skeleton"> </div>
           <div className="skeleton book__title--skeleton"></div>
