@@ -11,13 +11,13 @@ const Book = ({ book }) => {
   useEffect(() => {
     const image = new Image();
     image.src = book.url;
-
+    mountedRef.current = true;
     image.onload = () => {
       setTimeout(()=> {
         if (mountedRef.current) {
           setImg(image.src);
         }
-      }, 300);
+      }, 500);
     };
       image.onerror = () => {
     if (mountedRef.current) {
@@ -43,13 +43,11 @@ const Book = ({ book }) => {
               />
             </figure>
           </Link>
-
           <div className="book__title">
             <Link to={`/books/${book.id}`} className="book__title--link">
               {book.title}
             </Link>
           </div>
-
           <Rating rating={book.rating} />
           <Price salePrice={book.salePrice} originalPrice={book.originalPrice} />
       </>
